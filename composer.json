@@ -1,0 +1,23 @@
+{
+    "name": "cri2net/php-sms-client",
+    "type": "library",
+    "description": "SMS Client Library for php",
+    "authors": [
+        {
+            "name": "Andrey Davidovich",
+            "email": "cri2net@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "cri2net/php-pdo-db": "^1.1.1"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "cri2net\\sms_client\\": "src"
+        }
+    },
+    "license": "proprietary"
+}
