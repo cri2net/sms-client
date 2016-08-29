@@ -1,5 +1,5 @@
 {
-    "name": "cri2net/php-sms-client",
+    "name": "cri2net/sms-client",
     "type": "library",
     "description": "SMS Client Library for php",
     "authors": [
