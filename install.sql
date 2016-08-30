@@ -20,3 +20,7 @@ CREATE TABLE IF NOT EXISTS `sms` (
   KEY `processing` (`processing`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- version 1.0.1
+ALTER TABLE `sms`
+  ADD COLUMN `additional` MEDIUMTEXT NULL AFTER `processing_status`;
+
