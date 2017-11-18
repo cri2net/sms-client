@@ -15,6 +15,9 @@ composer require cri2net/sms-client
 Для лучшей интеграции будет удобно создать таблицу в базе данных. Однако это не обязательно для работы.
 
 Не забывайте просматривать файл install.sql при обновлениях версии.
+
+Также, поддерживаются автоматические SQL миграции на основе пакета [placebook/framework-selfupdate](https://packagist.org/packages/placebook/framework-selfupdate)
+
 Текущее содержимое:
 ``` sql
 -- version 1.0.0
