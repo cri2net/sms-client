@@ -143,6 +143,7 @@ abstract class AbstractSMS implements SMSInterface
         $list = $this->getMessagesToSend();
 
         foreach ($list as $item) {
+
             $update = [
                 'status'     => 'sending',
                 'updated_at' => microtime(true),
@@ -159,7 +160,14 @@ abstract class AbstractSMS implements SMSInterface
             ];
 
             try {
+                
+                $originalAlfaname = $this->alfaname;
+                if (!empty($item['alfaname'])) {
+                    $this->alfaname = $item['alfaname'];
+                }
+
                 $info = $this->sendSMS($item['to'], $item['raw_text']);
+                $this->alfaname = $originalAlfaname;
 
                 if (!isset($processing_data['first'])) {
                     $processing_data['first'] = $info;
