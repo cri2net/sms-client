@@ -24,3 +24,7 @@ CREATE TABLE IF NOT EXISTS `sms` (
 ALTER TABLE `sms`
   ADD COLUMN `additional` MEDIUMTEXT NULL AFTER `processing_status`;
 
+-- version 1.1.1
+ALTER TABLE `sms`
+  ADD COLUMN alfaname VARCHAR(50) NULL AFTER additional;
+

@@ -10,10 +10,12 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "placebook/framework-selfupdate": "^1.2.1",
         "cri2net/php-pdo-db": "^1.1.1"
     },
     "require-dev": {
+    },
+    "suggest": {
+        "placebook/framework-selfupdate": "For semi-automatic work with SQL migrations"
     },
     "autoload": {
         "psr-4": {
