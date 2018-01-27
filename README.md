@@ -72,3 +72,25 @@ ALTER TABLE `sms`
 - **checkStatusByCron()** — метод предназначен для проверки статусов отправленных сообщений по расписанию (через crontab)
 - **sendSmsByCron()** — отправка подготовленных sms, которые сохранены в БД
 
+```php
+
+use cri2net\sms_client\Sender;
+use cri2net\sms_fly\SMS_fly;
+
+$sender = new Sender();
+
+// один доступный аккаунт
+$sms1 = new SMS_fly('380000000001', 'pass1');
+$sms1->alfaname = 'Alfaname';
+$sender->addInstance($sms1);
+
+// ещё один аккаунт
+$sms2 = new SMS_fly('380000000002', 'pass2');
+$sms1->alfaname = 'Alfaname';
+$sender->addInstance($sms2);
+
+$to = '380940000001';
+$best = $sender->getBestInstance($to);
+$data = $best->sendSMS($to, 'Hello!');
+
+```
