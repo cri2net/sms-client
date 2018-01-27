@@ -42,6 +42,10 @@ CREATE TABLE IF NOT EXISTS `sms` (
 -- version 1.0.1
 ALTER TABLE `sms`
   ADD COLUMN `additional` MEDIUMTEXT NULL AFTER `processing_status`;
+
+-- version 1.1.1
+ALTER TABLE `sms`
+  ADD COLUMN alfaname VARCHAR(50) NULL AFTER additional;
 ```
 
 ### Описание полей:
@@ -72,6 +76,8 @@ ALTER TABLE `sms`
 - **checkStatusByCron()** — метод предназначен для проверки статусов отправленных сообщений по расписанию (через crontab)
 - **sendSmsByCron()** — отправка подготовленных sms, которые сохранены в БД
 
+
+### Выбор оптимального шлюза из всех доступных
 ```php
 
 use cri2net\sms_client\Sender;
