@@ -4,6 +4,7 @@
 
 На  текущий момент поддерживаются следующие SMS шлюзы:
 - sms-fly.com через пакет [cri2net/sms-fly](https://packagist.org/packages/cri2net/sms-fly)
+- letsads.com через пакет [cri2net/sms-letsads](https://packagist.org/packages/cri2net/sms-letsads)
 
 # Установка
 ## Установка библиотеки
