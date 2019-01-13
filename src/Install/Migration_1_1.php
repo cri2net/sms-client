@@ -44,8 +44,8 @@ class Migration_1_1 implements MigrationInterface
                         );"
                     );
                     PDO_DB::query("ALTER SEQUENCE {$prefix}sms_seq RESTART WITH 1;");
-                    PDO_DB::query("CREATE INDEX status ON {$prefix}sms (status, min_sending_time);");
-                    PDO_DB::query("CREATE INDEX processing ON {$prefix}sms (processing);");
+                    PDO_DB::query("CREATE INDEX {$prefix}sms_status_index ON {$prefix}sms (status, min_sending_time);");
+                    PDO_DB::query("CREATE INDEX {$prefix}sms_processing_index ON {$prefix}sms (processing);");
                     break;
                 
                 case 'mysql':
