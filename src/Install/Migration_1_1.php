@@ -24,8 +24,8 @@ class Migration_1_1 implements MigrationInterface
                     PDO_DB::query("CREATE SEQUENCE {$prefix}sms_seq;");
                     PDO_DB::query(
                         "CREATE TABLE {$prefix}sms (
-                            id integer NOT NULL,
-                            status sms_status_enum NOT NULL,
+                            id int NOT NULL DEFAULT NEXTVAL ('{$prefix}sms_seq'),
+                            status sms_status_enum NOT NULL DEFAULT 'new',
                             \"to\" character varying(100) NOT NULL,
                             created_at double precision NOT NULL,
                             updated_at double precision NOT NULL,
