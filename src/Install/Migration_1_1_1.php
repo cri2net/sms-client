@@ -11,13 +11,19 @@ class Migration_1_1_1 implements MigrationInterface
     public static function up()
     {
         $prefix = (defined('TABLE_PREFIX')) ? TABLE_PREFIX : '';
-        $pdo = PDO_DB::getPDO();
 
         try {
-            $pdo->query("ALTER TABLE {$prefix}sms ADD COLUMN alfaname VARCHAR(50) NULL AFTER additional");
+            switch (PDO_DB::getParams('type')) {
+                case 'pgsql':
+                    PDO_DB::query("ALTER TABLE {$prefix}sms ADD COLUMN alfaname character varying(50)");
+                    break;
+
+                case 'mysql':
+                default:
+                    PDO_DB::query("ALTER TABLE {$prefix}sms ADD COLUMN alfaname VARCHAR(50) NULL AFTER additional");
+            }
 
         } catch (Exception $e) {
-            $pdo->rollBack();
             throw $e;
         }
     }
@@ -25,13 +31,11 @@ class Migration_1_1_1 implements MigrationInterface
     public static function down()
     {
         $prefix = (defined('TABLE_PREFIX')) ? TABLE_PREFIX : '';
-        $pdo = PDO_DB::getPDO();
 
         try {
-            $pdo->query("ALTER TABLE {$prefix}sms DROP COLUMN alfaname");
+            PDO_DB::query("ALTER TABLE {$prefix}sms DROP COLUMN alfaname");
 
         } catch (Exception $e) {
-            $pdo->rollBack();
             throw $e;
         }
     }

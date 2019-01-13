@@ -96,7 +96,7 @@ abstract class AbstractSMS implements SMSInterface
             return [];
         }
 
-        $stm = PDO_DB::prepare("SELECT * FROM `{$this->table}` WHERE status='new' AND min_sending_time<=? AND (processing=? OR processing IS NULL)");
+        $stm = PDO_DB::prepare("SELECT * FROM {$this->table} WHERE status='new' AND min_sending_time<=? AND (processing=? OR processing IS NULL)");
         $stm->execute([microtime(true), $this->getProcessingKey()]);
 
         return $stm->fetchAll();
