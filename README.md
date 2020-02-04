@@ -80,6 +80,7 @@ ALTER TABLE `sms`
 
 ### Выбор оптимального шлюза из всех доступных
 ```php
+<?php
 
 use cri2net\sms_client\Sender;
 use cri2net\sms_fly\SMS_fly;

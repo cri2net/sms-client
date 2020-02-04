@@ -22,5 +22,5 @@
             "cri2net\\sms_client\\": "src"
         }
     },
-    "license": "proprietary"
+    "license": "MIT"
 }
