@@ -1,4 +1,5 @@
 <?php
+
 namespace cri2net\sms_client;
 
 interface SMSInterface

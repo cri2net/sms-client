@@ -1,4 +1,5 @@
 <?php
+
 namespace cri2net\sms_client;
 
 use cri2net\php_pdo_db\PDO_DB;
