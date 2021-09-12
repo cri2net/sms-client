@@ -28,3 +28,15 @@ ALTER TABLE `sms`
 ALTER TABLE `sms`
   ADD COLUMN alfaname VARCHAR(50) NULL AFTER additional;
 
+-- version 1.2.0
+ALTER TABLE sms
+  CHANGE `status` `status` ENUM('new','sending','complete','cancel','fail') CHARSET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'new' NOT NULL,
+  CHANGE `to` `to` VARCHAR(100) CHARSET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  CHANGE `replace_data` `replace_data` TEXT CHARSET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  CHANGE `raw_text` `raw_text` TEXT CHARSET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  CHANGE `processing` `processing` VARCHAR(50) CHARSET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  CHANGE `processing_data` `processing_data` MEDIUMTEXT CHARSET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  CHANGE `processing_status` `processing_status` VARCHAR(50) CHARSET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  CHANGE `additional` `additional` MEDIUMTEXT CHARSET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  CHANGE `alfaname` `alfaname` VARCHAR(50) CHARSET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  CHARSET=utf8mb4, COLLATE=utf8mb4_general_ci;
