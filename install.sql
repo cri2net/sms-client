@@ -28,7 +28,7 @@ ALTER TABLE `sms`
 ALTER TABLE `sms`
   ADD COLUMN alfaname VARCHAR(50) NULL AFTER additional;
 
--- version 1.2.0
+-- version 1.4.6
 ALTER TABLE sms
   CHANGE `status` `status` ENUM('new','sending','complete','cancel','fail') CHARSET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT 'new' NOT NULL,
   CHANGE `to` `to` VARCHAR(100) CHARSET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,

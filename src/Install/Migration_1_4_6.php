@@ -5,7 +5,7 @@ namespace cri2net\sms_client\Install;
 use cri2net\php_pdo_db\PDO_DB;
 use Placebook\Framework\Core\Install\MigrationInterface;
 
-class Migration_1_2_0 implements MigrationInterface
+class Migration_1_4_6 implements MigrationInterface
 {
     public static function up()
     {

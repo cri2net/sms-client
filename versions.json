@@ -3,6 +3,6 @@
           "0":     {"class": null},
           "1.1.0": {"class": "Migration_1_1", "namespace": "\\cri2net\\sms_client\\Install"}
         , "1.1.1": {"class": "Migration_1_1_1", "namespace": "\\cri2net\\sms_client\\Install"}
-        , "1.2.0": {"class": "Migration_1_2_0", "namespace": "\\cri2net\\sms_client\\Install"}
+        , "1.4.6": {"class": "Migration_1_4_6", "namespace": "\\cri2net\\sms_client\\Install"}
     }
 }
